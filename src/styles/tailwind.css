@@ -4,8 +4,15 @@
 
 @layer base {
   h1,
-  h2 {
+  h2,
+  h3 {
     @apply mb-4;
     @apply font-bold;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
   }
 }

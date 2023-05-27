@@ -1,0 +1,17 @@
+---
+import { config } from '../../config';
+---
+
+<nav class="bg-white shadow-sm h-[3.75rem] px-2 py-4 flex">
+  <div class="w-full flex-wrap justify-between flex">
+    <div class="min-w-0 flex-1 items-center flex">
+      {
+        config.navbar.map((navLink) => (
+          <a href={navLink.to} class="truncate text-black hover:text-atlantis-500 font-medium px-3 py-1 transition-colors duration-200 inline-block">
+            {navLink.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>

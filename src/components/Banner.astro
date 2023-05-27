@@ -1,0 +1,26 @@
+---
+import clsx from 'clsx';
+
+export interface Props {
+  imgSrc: string;
+  imgAlt: string;
+  heading: string;
+  desc: string;
+}
+
+const { imgSrc, imgAlt, heading, desc } = Astro.props;
+---
+
+<section class="min-h-[300px] items-center mb-0 flex relative">
+  <img src={imgSrc} alt={imgAlt} class={clsx('h-full', 'object-cover', 'w-full', 'absolute', 'top-0', 'left-0', heading && 'brightness-50')} />
+  {
+    heading && (
+      <div class="container mx-auto">
+        <div class="relative">
+          <p class="text-center text-white tracking-[0.2em] mb-8 text-xl md:text-4xl">{heading}</p>
+          <p class="text-center text-white tracking-[0.2em] text-lg">{desc}</p>
+        </div>
+      </div>
+    )
+  }
+</section>

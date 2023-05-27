@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import { config } from '../../config';
+
+const { title, about } = config;
+---
+
+<Layout title="เกี่ยวกับเรา">
+  <Header hero={false} title="เกี่ยวกับเรา" tagLine="" />
+  <div class="container mx-auto my-8 px-4">
+    <p class="mb-4 text-base">เรื่องราว ข้อมูล และประวัติที่เกี่ยวข้องกับ{title}</p>
+    <h2 class="text-3xl">{title}</h2>
+    {about.map((paragraph) => <p class="mb-4 text-base">{paragraph.p}</p>)}
+  </div>
+</Layout>

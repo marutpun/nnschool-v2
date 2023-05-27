@@ -1,10 +1,18 @@
 ---
-import { config } from '../../config';
+import clsx from 'clsx';
+
+export interface Props {
+  hero: boolean;
+  title: string;
+  tagLine: string;
+}
+
+const { hero, title, tagLine } = Astro.props;
 ---
 
-<header class="flex items-center px-0 md:px-8 py-16 bg-atlantis-500" style="height: 25rem">
+<header class={clsx('bg-atlantis-500', hero && 'h-[25rem]', 'items-center', 'px-0', 'md:px-8', 'py-16', 'flex')}>
   <div class="container mx-auto px-4">
-    <h1 class="mb-4 text-5xl text-white">{config.title}</h1>
-    <p class="text-2xl text-white">{config.tagline}</p>
+    <h1 class={clsx('text-white', !hero && 'text-center mb-0', 'text-5xl')}>{title}</h1>
+    {tagLine && <p class="text-white text-2xl">{tagLine}</p>}
   </div>
 </header>

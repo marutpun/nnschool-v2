@@ -1,0 +1,16 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import StaffCard from '../components/StaffCard.astro';
+import { config } from '../../config';
+
+const { title, people } = config;
+---
+
+<Layout title="บุคลากร">
+  <Header hero={false} title="บุคลากร" tagLine="" />
+  <div class="container mx-auto my-8 px-4" id="skipToContent_fallback">
+    <p class="mb-4 text-base">บุคลากรชุดปัจจุบันของ{title}</p>
+    {people.map((individual) => <StaffCard img={individual.img} title={individual.title} rank={individual.rank} desc={individual.desc} />)}
+  </div>
+</Layout>

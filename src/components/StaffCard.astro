@@ -1,0 +1,24 @@
+---
+export interface Props {
+  img: string;
+  title: string;
+  rank: string;
+  desc: string;
+}
+
+const { img, title, rank, desc } = Astro.props;
+import dummyProfile from '../../src/images/dummy.png';
+---
+
+<div class="pb-6 md:pb-10">
+  <div class="flex-col md:flex-row flex">
+    <div class="max-w-full w-[300px] h-[250px] rounded flex-auto md:flex-[0_0_25%] relative">
+      <img src={img ? img : dummyProfile} alt={title} class="h-full w-full object-cover absolute" />
+    </div>
+    <div class="pl-0 md:pl-4 flex-auto md:flex-[0_0_75%] items-start">
+      <h3 class="mdx-heading mb-1 md:my-0 text-2xl font-display leading-9 text-primary dark:text-primary-dark font-bold my-6">{title}</h3>
+      <p class="text-base">{rank}</p>
+      {desc ? <p class="my-4">{desc}</p> : null}
+    </div>
+  </div>
+</div>

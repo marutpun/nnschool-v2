@@ -1,7 +1,9 @@
 ---
-import Header from '../components/Header.astro';
+import SkipLink from '../components/SkipLink.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/tailwind.css';
+import { config } from '../../config';
 
 export interface Props {
   title: string;
@@ -11,15 +13,21 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="th" dir="ltr">
+<html lang="th" dir="ltr" class="h-full">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title>{title} | {config.title}</title>
+    <link rel="icon" href="favicon.ico" />
   </head>
-  <body>
-    <Header />
-    <slot />
-    <Footer />
+  <body style="overflow:visible;height:100%;">
+    <div class="min-h-full flex-col flex">
+      <SkipLink />
+      <Navbar />
+      <div class="flex-col flex-[1_0_auto] flex" id="skipToContent_fallback">
+        <slot />
+      </div>
+      <Footer />
+    </div>
   </body>
 </html>
