@@ -1,8 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Feature from '../components/Feature.astro';
+import Banner from '../components/Banner.astro';
+
 import { config } from '../../config';
+
+const { title, tagLine, feature, bannerHomepage, bannerHomepageAlt, bannerHompageHeading, bannerHompageDesc } = config;
 ---
 
-<Layout title={`${config.title} | หน้าแรก`}>
-  <h1>Welcome to Astro</h1>
+<Layout title="หน้าแรก">
+  <Header hero={true} title={title} tagLine={tagLine} />
+  <div class="container mx-auto my-8 px-4 max-w-[82.5rem]">
+    <div class="-mx-4 flex-wrap flex">
+      {feature.map((card) => <Feature imgSrc={card.img} imgAlt={card.imgAlt} title={card.title} desc={card.desc} />)}
+    </div>
+  </div>
+  <Banner imgSrc={bannerHomepage} imgAlt={bannerHomepageAlt} heading={bannerHompageHeading} desc={bannerHompageDesc} />
 </Layout>
