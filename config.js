@@ -27,15 +27,11 @@ export const config = {
       label: 'ติดต่อเรา',
     },
   ],
-  feature: [
-    { img: '/src/images/undraw_education_f8ru.svg', imgAlt: 'Education', title: 'โรงเรียนคุณภาพประจำตำบล', desc: 'พัฒนาคุณภาพด้านการศึกษาให้กับประเทศที่เริ่มจากท้องถิ่น' },
-    { img: '/src/images/undraw_connection_b38q.svg', imgAlt: 'Teaching with technology', title: 'การเรียนการสอนร่วมเทคโนโลยี', desc: 'ประยุกต์ใช้เครื่องมือที่ทันสมัยให้ก้าวทันโลก' },
-    { img: '/src/images/undraw_certification_aif8.svg', imgAlt: 'Staff with many years of experience', title: 'บุคลากรที่มีคุณภาพ', desc: 'เพียบพร้อมด้วยผู้เชี่ยวชาญที่หลากหลายและมากประสบการณ์' },
-  ],
+
   bannerHomepage: '/src/images/bg-school.jpg',
   bannerHomepageAlt: 'In front of the school',
   bannerHompageHeading: 'โรงเรียนวัดนาหนองเป็นส่วนหนึ่งของชุมชนบวร',
-  bannerHompageDesc: 'ชุมชนบ้านนาหนอง | วัดนาหนอง | โรงเรียนวัดนาหนอง',
+  bannerHompageDesc: 'บ้าน | วัดนาหนอง | โรงเรียนวัดนาหนอง',
   footerBg: '/src/images/pupils-play-soccer.jpg',
   footerBgAlt: 'Students play soccer',
   about: [

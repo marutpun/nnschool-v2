@@ -5,15 +5,22 @@ import Feature from '../components/Feature.astro';
 import Banner from '../components/Banner.astro';
 
 import { config } from '../../config';
+import feature1 from '../images/undraw_education_f8ru.svg';
+import feature2 from '../images/undraw_connection_b38q.svg';
+import feature3 from '../images/undraw_certification_aif8.svg';
 
-const { title, tagLine, feature, bannerHomepage, bannerHomepageAlt, bannerHompageHeading, bannerHompageDesc } = config;
+import bannerHomepage from '../images/bg-school.jpg';
+
+const { title, tagLine, bannerHomepageAlt, bannerHompageHeading, bannerHompageDesc } = config;
 ---
 
 <Layout title="หน้าแรก">
   <Header hero={true} title={title} tagLine={tagLine} />
   <div class="container mx-auto my-8 px-4 max-w-[82.5rem]">
     <div class="-mx-4 flex-wrap flex">
-      {feature.map((card) => <Feature imgSrc={card.img} imgAlt={card.imgAlt} title={card.title} desc={card.desc} />)}
+      <Feature imgSrc={feature1} imgAlt="Education" title="โรงเรียนคุณภาพประจำตำบล" desc="พัฒนาคุณภาพด้านการศึกษาให้กับประเทศที่เริ่มจากท้องถิ่น" />
+      <Feature imgSrc={feature2} imgAlt="Teaching with technology" title="การเรียนการสอนร่วมเทคโนโลยี" desc="ประยุกต์ใช้เครื่องมือที่ทันสมัยให้ก้าวทันโลก" />
+      <Feature imgSrc={feature3} imgAlt="Staff with many years of experience" title="บุคลากรที่มีคุณภาพ" desc="เพียบพร้อมด้วยผู้เชี่ยวชาญที่หลากหลายและมากประสบการณ์" />
     </div>
   </div>
   <Banner imgSrc={bannerHomepage} imgAlt={bannerHomepageAlt} heading={bannerHompageHeading} desc={bannerHompageDesc} />
